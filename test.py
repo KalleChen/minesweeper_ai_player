@@ -8,10 +8,11 @@ if __name__=="__main__":
     y=[0 for i in range(20,161)]
     task=0
     t=0
-    while(task<=50):
-        print("t: ",t)
-        t+=1
-        start = time.time()
+    while(1):
+        # print("t: ",t)
+        # t+=1
+        # start = time.time()
+        
         board,init_point=controller.start('hard')
         play.init(board, init_point)
         while(1):
@@ -30,19 +31,23 @@ if __name__=="__main__":
                     play.print_board(board)
                     time.sleep(10)
             # draw.draw(board,0)
-        end=time.time()
+        print(point)
+        if point==-1:
+            break
+        # end=time.time()
         
-        if end-start>max_time and point!=-2:
-            max_time = end-start
-        if point!=-2:
-            print(end-start)
-            print(task)
-            task+=1
-            for xth in range(len(x)-1):
-                if end-start<x[xth+1] and end-start>=x[xth]:
-                    y[xth]+=1
-    x.pop()
-    plt.bar(x,y,width=0.01)
-    plt.show()
-    print(max_time)
-    print(y)
+        # if end-start>max_time and point!=-2:
+        #     max_time = end-start
+        # if point!=-2:
+        #     print(end-start)
+        #     print(task)
+        #     task+=1
+        #     for xth in range(len(x)-1):
+        #         if end-start<x[xth+1] and end-start>=x[xth]:
+        #             y[xth]+=1
+    # x.pop()
+    # plt.bar(x,y,width=0.01)
+    # plt.show()
+    # print(max_time)
+    # print(y)
+    draw.draw(board,1)
