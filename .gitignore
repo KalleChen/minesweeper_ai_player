@@ -1,0 +1,8 @@
+.vscode
+*.pdf
+*.pages
+*.png
+*.jpg
+*.jpeg
+.DS_Store
+__pycache__
